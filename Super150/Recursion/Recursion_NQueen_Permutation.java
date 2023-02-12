@@ -2,8 +2,8 @@ package Super150.Recursion;
 
 public class Recursion_NQueen_Permutation {
     public static void main(String[] args){
-        int n=4;    //Number of queen
-        int tq=2;   //Boxes
+        int n=4;    //Number of boxes
+        int tq=2;   //queens
         boolean board[]=new boolean[n];
         System.out.println("Total number of arrangements : ");
         Permutation(board,tq,0,"");

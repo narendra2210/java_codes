@@ -1,6 +1,6 @@
-package Super150;
+package Super150.Recursion;
 import java.util.*;
-public class abc {
+public class Recursion_Snake_Ladder {
     public static void main(String args[]) {
         // Your Code Here
         Scanner sc=new Scanner(System.in);

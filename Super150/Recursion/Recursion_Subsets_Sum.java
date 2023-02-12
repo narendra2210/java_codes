@@ -56,7 +56,7 @@ public class Recursion_Subsets_Sum {
     }
     public static void print_subsets(int arr[],int m,int sum,int j,String ans){
         if(sum==m){
-            System.out.print(ans+" ");
+           System.out.print(ans+" ");
            sum=0;
            return;
         }
