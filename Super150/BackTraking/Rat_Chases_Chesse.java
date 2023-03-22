@@ -48,25 +48,25 @@ public class Rat_Chases_Chesse {
        }
     }
     public static void Rat_chase(char ch[][],int cr,int cc,int ans[][]){
-       if(cr==ch.length-1 && cc==ch[0].length-1 ){
+       if(cr==ch.length-1 && cc==ch[0].length-1){
            ans[cr][cc]=1;
            f=true;
-           Display(ch,ans);
+           Display(ans);
            return;
        }
-       if(cr<0 ||cc<0|| cr>=ch.length || cc>=ch[0].length || ch[cr][cc]=='X'){
+       if(cr<0 || cc<0 || cr>=ch.length || cc>=ch[0].length || ch[cr][cc]=='X'){
            return;
        }
        ch[cr][cc]='X';
        ans[cr][cc]=1;
-       Rat_chase(ch,cr-1,cc,ans);//down
-       Rat_chase(ch,cr+1,cc,ans);//up
+       Rat_chase(ch,cr-1,cc,ans);//up
+       Rat_chase(ch,cr+1,cc,ans);//down
        Rat_chase(ch,cr,cc+1,ans);//right
        Rat_chase(ch,cr,cc-1,ans);//left
        ch[cr][cc]='0';
        ans[cr][cc]=0;
     }
-    public static void Display(char ch[][],int ans[][]){
+    public static void Display(int ans[][]){
         for(int i=0;i<ans.length;i++){
             for(int j=0;j<ans[0].length;j++){
                 System.out.print(ans[i][j]+" ");

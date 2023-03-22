@@ -7,7 +7,7 @@ public class RecursionFibo {
         int n=sc.nextInt();
         System.out.print("The fibonacci series is : ");
         System.out.print(0 +" "+1+" ");
-        for(int i=2;i<=n;i++){
+        for(int i=2;i<n;i++){
             System.out.print(fibo(i)+" ");
         }
     }

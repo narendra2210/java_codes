@@ -38,7 +38,7 @@ public class Recursion_Tower_Of_Hanoi {
     public static void main(String args[]) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        tower_of_hanoi(n,'A','B','C');
+        tower_of_hanoi(n ,'A','B','C');
         System.out.println("Total number of steps : " + ((int)(Math.pow(2,n))-1));
     }
     public static void tower_of_hanoi(int n,char src,char des,char mid){

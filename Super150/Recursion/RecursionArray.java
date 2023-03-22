@@ -3,7 +3,7 @@ package Super150.Recursion;
 public class RecursionArray {
     public static void main(String[] args) {
         int arr[]={2,3,7,2,5,7,9,7};
-        int item=0;
+        int item=7;
         int len=arr.length;
         System.out.println(index(arr,item,len-1));
     }

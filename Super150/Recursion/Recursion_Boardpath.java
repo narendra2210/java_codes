@@ -19,7 +19,7 @@
 // Sample Output
 // 111 12 21 3 
 // 4
-package Super150;
+package Super150.Recursion;
 import java.util.*;
 public class Recursion_Boardpath {
     public static void main(String args[]) {

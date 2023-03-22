@@ -54,7 +54,7 @@ public class N_queen_Hard {
                 return false;
             }
         }
-        for(int i =col-1 ; i>=0 ; i--){
+        for(int i = col-1 ; i>=0 ; i--){
             if(board[row][i]==1){
                 return false;
             }
