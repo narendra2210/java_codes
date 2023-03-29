@@ -18,7 +18,7 @@ public class queue {
             }
         
             public boolean isEmpty(){
-                return size== 0 ;
+                return size==0 ;
             }
         
             public boolean isFull(){
@@ -33,7 +33,7 @@ public class queue {
                 if(isFull()){
                     throw new Exception("Queue full h");
                 }
-                int idx = (front +size )%arr.length;
+                int idx = (front + size)%arr.length;
                 arr[idx] = item ;
                 size++ ;
             }

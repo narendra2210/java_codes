@@ -55,7 +55,7 @@ package Super150.Stack_and_Queue;
 import java.util.*;
 public class Stock_Span {
     public static void main(String[] args) {
-        int arr[] = {3,6,1,4,18,7,5,11};
+        int arr[] = {30,35,40,38,35};
         Span(arr);
     }
     public static void Span(int arr[]){

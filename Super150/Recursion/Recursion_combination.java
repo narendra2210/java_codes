@@ -2,7 +2,7 @@ package Super150.Recursion;
 
 public class Recursion_combination {
     public static void main(String[] args) {
-        perm(2,"",0);
+        perm(3,"",0);
     }
     public static void perm(int n,String ans,int count){
         if(n==count){

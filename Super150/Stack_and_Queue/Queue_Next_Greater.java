@@ -12,7 +12,7 @@ public class Queue_Next_Greater {
         Stack<Integer> st  = new Stack<>() ;
         for(int i=0; i<a.length; i++){
             while (!st.isEmpty() && a[i] > a[st.peek()]) {
-                ans[st.pop()] =a[i] ;
+                ans[st.pop()] = a[i] ;
             }
             st.push(i) ;
         }
