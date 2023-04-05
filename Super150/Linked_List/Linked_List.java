@@ -89,4 +89,39 @@ public class Linked_List {
         return GetNode(k).val;
     }
 
+    public int removeFirst()throws Exception{
+        if(size == 0){
+            throw new Exception("Linked list is Empty");
+        }
+        int rv = head.val;
+        if(size == 1){
+           head = null;
+           tail = null;
+           size--;
+        }
+        else{
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+            size--;
+        }
+        return rv;
+    }
+
+    public int removeLast()throws Exception{
+        if(size == 0){
+            throw new Exception("Linked list is Empty");
+        }
+        int rv = tail.val;
+        if(size == 1){
+          return removeFirst();
+        }
+        else{
+            Node n = GetNode(size-1);
+            tail = n;
+            tail.next = null;
+            size--;
+        }
+        return rv;
+    }
 }
