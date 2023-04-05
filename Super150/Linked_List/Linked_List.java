@@ -56,4 +56,20 @@ public class Linked_List {
          return temp;
     }
 
+    public void Add_At_Index(int item , int k)throws Exception{
+        if(k<=0 || k>=size){
+            throw new Exception("Bklol");
+         }
+         if(k==0){
+            Addfirst(item);
+         }
+         else if(k==size){
+            Addlast(item);
+         }
+         else{
+            Node nn =  new Node();
+            nn.val = item;
+         }
+    }
+
 }
