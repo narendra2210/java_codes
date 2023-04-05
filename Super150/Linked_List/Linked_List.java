@@ -69,6 +69,11 @@ public class Linked_List {
          else{
             Node nn =  new Node();
             nn.val = item;
+            Node k_1th = GetNote(k-1);
+            Node Kth = k_1th.next;
+            k_1th.next = nn;
+            nn.next = Kth;
+            size++;
          }
     }
 
