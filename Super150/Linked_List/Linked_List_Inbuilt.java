@@ -12,5 +12,8 @@ public class Linked_List_Inbuilt {
         System.out.println(list);
         list.add(2,50);
         System.out.println(list);
+
+        //Queue<Integer> q = new LinkedList<>();
+        //LinkedList<Integer> q = new LinkedList<>();
     }
 }
