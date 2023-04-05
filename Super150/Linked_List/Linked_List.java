@@ -56,7 +56,7 @@ public class Linked_List {
          return temp;
     }
 
-    public void Add_At_Index(int item , int k)throws Exception{
+    public void addAtIndex(int item , int k)throws Exception{
         if(k<=0 || k>=size){
             throw new Exception("Bklol");
          }
@@ -123,5 +123,25 @@ public class Linked_List {
             size--;
         }
         return rv;
+    }
+
+    public int removeAtIndex(int k)throws Exception{
+        if(k < size || k > size){
+            throw new Exception("Empty h bro");
+        }
+        if(k == 0){
+            return removeFirst();
+        }
+        else if(k == size-1){
+            return removeLast();
+        }
+        else{
+            Node K_1th = GetNode(k-1);
+            Node kth = K_1th.next;
+            K_1th.next = kth.next;
+            kth.next = null;
+            size--;
+            return kth.val;
+        }
     }
 }
