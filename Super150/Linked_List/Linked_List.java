@@ -45,7 +45,7 @@ public class Linked_List {
             size++;
         }
     }
-    public Node GetNote(int k)throws Exception{
+    public Node GetNode(int k)throws Exception{
          if(k<=0 || k>=size){
             throw new Exception("Bklol");
          }
@@ -69,12 +69,24 @@ public class Linked_List {
          else{
             Node nn =  new Node();
             nn.val = item;
-            Node k_1th = GetNote(k-1);
+            Node k_1th = GetNode(k-1);
             Node Kth = k_1th.next;
             k_1th.next = nn;
             nn.next = Kth;
             size++;
          }
+    }
+
+    public int getFirst(){
+        return head.val;
+    }
+
+    public int getLast(){
+        return tail.val;
+    }
+
+    public int getatIndex(int k)throws Exception{
+        return GetNode(k).val;
     }
 
 }
