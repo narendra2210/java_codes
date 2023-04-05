@@ -45,5 +45,15 @@ public class Linked_List {
             size++;
         }
     }
+    public Node GetNote(int k)throws Exception{
+         if(k<=0 || k>=size){
+            throw new Exception("Bklol");
+         }
+         Node temp = head;
+         for(int i=0;i<=k;i++){
+            temp = temp.next;
+         }
+         return temp;
+    }
 
 }
