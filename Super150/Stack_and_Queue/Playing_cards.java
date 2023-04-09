@@ -84,8 +84,8 @@ public class Playing_cards {
 			while (!goku2.isEmpty()) {
 				System.out.println(goku2.pop());
 			}
-			data = goku1;
-			goku1 = new Stack<>();
+			data = goku1;   // copy the A stack data to original stack
+			goku1 = new Stack<>();  // New memeory allocation
 		}
 		while (!data.isEmpty()) {
 			System.out.println(data.pop());
