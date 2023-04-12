@@ -46,9 +46,8 @@ public class First_Negative_Integer {
     }
     public static void Negative_Window(int array[] , int k){
         int len = array.length;
-        int answer[] = new int[len];
-        Stack<Integer> stack = new Stack<>();
-        for(int j=0;j<len-k+1;j++){
+        int answer[] = new int[len-k+1];
+        for(int j=0;j<answer.length;j++){
             for(int i=j;i<j+k;i++){
                 if(array[i] < 0){
                 answer[j] = array[i];
@@ -57,7 +56,7 @@ public class First_Negative_Integer {
             }
             }
         }
-        for(int i=0;i<answer.length - k +1;i++){
+        for(int i=0;i<answer.length;i++){
             System.out.print(answer[i]+" ");
         }
         System.out.println();
