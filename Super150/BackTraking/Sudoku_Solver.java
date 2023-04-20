@@ -53,7 +53,6 @@ public class Sudoku_Solver {
         sudoku_solver(sudoku,0,0);
 		
 	}
-	static boolean flag = false;
 	public static void sudoku_solver(int [][] sudoku, int row, int col) {
 		if(col == sudoku.length) {
 			row++;
@@ -62,14 +61,8 @@ public class Sudoku_Solver {
          
         if(row == sudoku.length) {
 			display(sudoku);
-			flag = true;
 			return;
 		}
-
-		if(flag){
-            return;
-        }
-
 		if(sudoku[row][col]!=0){
             sudoku_solver(sudoku,row,col+1);
         }
