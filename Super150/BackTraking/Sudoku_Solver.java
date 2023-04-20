@@ -63,6 +63,7 @@ public class Sudoku_Solver {
 			display(sudoku);
 			return;
 		}
+		
 		if(sudoku[row][col]!=0){
             sudoku_solver(sudoku,row,col+1);
         }
