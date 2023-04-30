@@ -19,7 +19,7 @@
 // 6 10 
 
 package Super150.Array;
-import java.util.*;
+import java.util.Scanner;
 public class Leader_in_a_Array {
     public static void main (String args[]) {
         Scanner scn = new Scanner(System.in);
