@@ -1,6 +1,6 @@
 package Super150.Recursion;
 
-public class Recursionlec1 {
+public class Recursion_Factorial {
     public static void main(String[] args) {
         int n = 5;
         System.out.println(fact(n));
