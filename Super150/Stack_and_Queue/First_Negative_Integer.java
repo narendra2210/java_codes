@@ -29,35 +29,37 @@
 package Super150.Stack_and_Queue;
 
 import java.util.*;
+
 public class First_Negative_Integer {
     public static void main(String args[]) {
         Scanner scn = new Scanner(System.in);
-        int t=scn.nextInt();
-        while(t>0){
+        int t = scn.nextInt();
+        while (t > 0) {
             int n = scn.nextInt();
             int k = scn.nextInt();
             int array[] = new int[n];
-            for(int i=0;i<n;i++){
+            for (int i = 0; i < n; i++) {
                 array[i] = scn.nextInt();
             }
-            Negative_Window(array , k);
+            Negative_Window(array, k);
             t--;
         }
     }
-    public static void Negative_Window(int array[] , int k){
+
+    public static void Negative_Window(int array[], int k) {
         int len = array.length;
-        int answer[] = new int[len-k+1];
-        for(int j=0;j<answer.length;j++){
-            for(int i=j;i<j+k;i++){
-                if(array[i] < 0){
-                answer[j] = array[i];
-                break;
-                
-            }
+        int answer[] = new int[len - k + 1];
+        for (int j = 0; j < answer.length; j++) {
+            for (int i = j; i < j + k; i++) {
+                if (array[i] < 0) {
+                    answer[j] = array[i];
+                    break;
+
+                }
             }
         }
-        for(int i=0;i<answer.length;i++){
-            System.out.print(answer[i]+" ");
+        for (int i = 0; i < answer.length; i++) {
+            System.out.print(answer[i] + " ");
         }
         System.out.println();
     }
