@@ -1,3 +1,5 @@
+package Super150.Pattern;
+
 import java.util.Scanner;
 
 public class pascal_triangle {
