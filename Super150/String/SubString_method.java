@@ -1,4 +1,4 @@
-public class SubString_mathod {
+public class SubString_method {
     public static void main(String[] args) {
 
         String str = "abcd";
