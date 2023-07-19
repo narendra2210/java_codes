@@ -32,5 +32,40 @@ public class CB_Number {
 
     }
 
-    
+    public static boolean isvistied(boolean[] visited, int si, int ei) {
+        
+        for (int i = si; i <= ei; i++) {
+            if (visited[i] == true) {
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+
+    public static boolean iscbnumber(long n) {
+        int[] arr = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+        // point 1
+        if (n == 0 || n == 1) {
+            return false;
+        }
+        // point 2
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == n) {
+                return true;
+            }
+        }
+
+        // point 3
+        for (int i = 0; i < arr.length; i++) {
+            if (n % arr[i] == 0) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
 }
