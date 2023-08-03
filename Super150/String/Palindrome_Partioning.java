@@ -1,3 +1,5 @@
+package Super150.String;
+
 public class Palindrome_Partioning {
     public static void main(String[] args) {
 
