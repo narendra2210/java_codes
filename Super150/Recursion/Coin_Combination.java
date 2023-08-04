@@ -6,9 +6,7 @@ public class Coin_Combination {
 		int[] coin = { 2, 3, 5, 6 };
 		int amount = 10;
 		printCombintation(coin, amount, "", 0);
-
 	}
-
 	public static void printCombintation(int[] coin, int amount, String ans, int idx) {
 		if (amount == 0) {
 			System.out.println(ans);
