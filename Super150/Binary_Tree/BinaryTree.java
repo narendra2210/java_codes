@@ -32,7 +32,11 @@ public class BinaryTree {
         return nn;
     }
 
-    public void Display(Node nn) {
+    public void Display(){
+        Display(root);
+    }
+
+    private void Display(Node nn) {
         String s = "";
         s = "<--" + nn.data + "-->";
         if (nn.left != null) {
