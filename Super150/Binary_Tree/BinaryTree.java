@@ -23,7 +23,7 @@ public class BinaryTree {
         nn.data = item;
         boolean hlc = sc.nextBoolean();
         if (hlc == true) {
-            nn.right = createtree();
+            nn.left = createtree();
         }
         boolean hrc = sc.nextBoolean();
         if (hrc == true) {
@@ -37,6 +37,9 @@ public class BinaryTree {
     }
 
     private void Display(Node nn) {
+        if(nn == null){
+            return ;
+        }
         String s = "";
         s = "<--" + nn.data + "-->";
         if (nn.left != null) {
