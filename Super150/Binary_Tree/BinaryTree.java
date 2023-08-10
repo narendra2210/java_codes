@@ -57,4 +57,37 @@ public class BinaryTree {
         Display(nn.left);
         Display(nn.right);
     }
+
+    public int max(){
+        return max(root);
+    }
+
+    public int max(Node nn){
+        if(nn == null){
+            return Integer.MIN_VALUE;
+        }
+
+        int left = max(nn.left);
+        int right  = max(nn.right);
+
+        return Math.max(nn.data , Math.max(left , right));
+    }
+
+    public boolean find(int item){
+        return find(root , item);
+    }
+
+    private boolean find(Node nn , int item){
+        if(nn == null){
+            return false;
+        }
+
+        if(nn.data == item){
+            return true;
+        }
+
+        boolean left = find(nn.left , item);
+        boolean right = find(nn.right , item);
+        return left || right;
+    }
 }
