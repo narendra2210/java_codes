@@ -90,4 +90,18 @@ public class BinaryTree {
         boolean right = find(nn.right , item);
         return left || right;
     }
+
+    public int ht(){
+        return ht(root);
+    }
+
+    private int ht(Node nn){
+        if(nn == null){
+            return -1; 
+        }
+
+        int lh = ht(nn.left);
+        int rh = ht(nn.right);
+        return Math.max(lh,rh) + 1;
+    }
 }
