@@ -104,4 +104,31 @@ public class BinaryTree {
         int rh = ht(nn.right);
         return Math.max(lh,rh) + 1;
     }
+
+    public void preOrder(){
+        preOrder(root);
+        System.out.println();
+    }
+    private void preOrder(Node nn){
+        if( nn == null){
+            return;
+        }
+        System.out.print(nn.data+" ");
+        preOrder(nn.left);
+        preOrder(nn.right);
+    }
+
+    public void postOrder(){
+        postOrder(root);
+        System.out.println();
+    }
+    private void postOrder(Node nn){
+        if( nn == null){
+            return;
+        }
+        postOrder(nn.left);
+        postOrder(nn.right);
+        System.out.print(nn.data+" ");
+    }
+
 }
