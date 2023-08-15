@@ -131,4 +131,25 @@ public class BinaryTree {
         System.out.print(nn.data+" ");
     }
 
+    public void InOrder(){
+        InOrder(root);
+        System.out.println();
+    }
+    private void InOrder(Node nn){
+        if( nn == null){
+            return;
+        }
+        InOrder(nn.left);
+        System.out.print(nn.data+" ");
+        InOrder(nn.right);
+    }
+
+    private void levelOrder(){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node rv = q.remove();
+            
+        }
+    }
 }
