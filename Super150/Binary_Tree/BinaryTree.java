@@ -1,155 +1,120 @@
-package Super150.Binary_Tree;
-
-import java.util.*;
+import java.util.Scanner;
 
 public class BinaryTree {
-    public class Node {
-        int data;
-        Node left;
-        Node right;
-    }
+	Scanner sc = new Scanner(System.in);
 
-    private Node root;
+	public class Node {
+		int data;
+		Node left;
+		Node right;
 
-    public BinaryTree() {
-        root = createtree();
-    }
+	}
 
-    Scanner sc = new Scanner(System.in);
+	private Node root;
 
-    private Node createtree() {
-        int item = sc.nextInt();
-        Node nn = new Node();
-        nn.data = item;
-        boolean hlc = sc.nextBoolean();
-        if (hlc == true) {
-            nn.left = createtree();
-        }
-        boolean hrc = sc.nextBoolean();
-        if (hrc == true) {
-            nn.right = createtree();
-        }
-        return nn;
-    }
+	public BinaryTree() {
+		
+		this.root = CreateTree();
 
-    public void Display(){
-        Display(root);
-    }
+	}
 
-    private void Display(Node nn) {
-        if(nn == null){
-            return ;
-        }
-        String s = "";
-        s = "<--" + nn.data + "-->";
-        if (nn.left != null) {
-            s = nn.left.data + s;
+	private Node CreateTree() {
+		
 
-        } else {
-            s = "." + s;
-        }
-        if (nn.right != null) {
-            s = s + nn.right.data;
-        } else {
-            s = s + ".";
-        }
-        System.out.println(s);
-        Display(nn.left);
-        Display(nn.right);
-    }
+		int item = sc.nextInt();
+		Node nn = new Node();
+		nn.data = item;
+		boolean hlc = sc.nextBoolean();
+		if (hlc == true) {
+			nn.left = CreateTree();// left subStree
+		}
 
-    public int max(){
-        return max(root);
-    }
+		boolean hlr = sc.nextBoolean();
+		if (hlr == true) {
+			nn.right = CreateTree();// right SubStree
+		}
+		return nn;
 
-    public int max(Node nn){
-        if(nn == null){
-            return Integer.MIN_VALUE;
-        }
+	}
 
-        int left = max(nn.left);
-        int right  = max(nn.right);
+	public void Display() {
+		Display(this.root);
+	}
 
-        return Math.max(nn.data , Math.max(left , right));
-    }
+	private void Display(Node nn) {
+		if (nn == null) {
+			return;
+		}
+		String str = "";
+		str = str + nn.data;
+		str = "<--" + str + "-->";
+		if (nn.left != null) {
+			str = nn.left.data + str;
+		} else {
+			str = "." + str;
+		}
+		if (nn.right != null) {
+			str = str + nn.right.data;
+		} else {
+			str = str + ".";
+		}
+		System.out.println(str);
+		Display(nn.left);// left subtree visit
+		Display(nn.right);// right subtree visit
 
-    public boolean find(int item){
-        return find(root , item);
-    }
+	}
 
-    private boolean find(Node nn , int item){
-        if(nn == null){
-            return false;
-        }
+	public int max() {
 
-        if(nn.data == item){
-            return true;
-        }
+		return max(this.root);
+	}
 
-        boolean left = find(nn.left , item);
-        boolean right = find(nn.right , item);
-        return left || right;
-    }
+	private int max(Node node) {
+		
+		if (node == null) {
+			return Integer.MIN_VALUE;
+		}
 
-    public int ht(){
-        return ht(root);
-    }
+		int lmax = max(node.left);
+		int rmax = max(node.right);
+		return Math.max(lmax, Math.max(rmax, node.data));
 
-    private int ht(Node nn){
-        if(nn == null){
-            return -1; 
-        }
+	}
 
-        int lh = ht(nn.left);
-        int rh = ht(nn.right);
-        return Math.max(lh,rh) + 1;
-    }
+	public boolean find(int item) {
 
-    public void preOrder(){
-        preOrder(root);
-        System.out.println();
-    }
-    private void preOrder(Node nn){
-        if( nn == null){
-            return;
-        }
-        System.out.print(nn.data+" ");
-        preOrder(nn.left);
-        preOrder(nn.right);
-    }
+		return find(this.root, item);
+	}
 
-    public void postOrder(){
-        postOrder(root);
-        System.out.println();
-    }
-    private void postOrder(Node nn){
-        if( nn == null){
-            return;
-        }
-        postOrder(nn.left);
-        postOrder(nn.right);
-        System.out.print(nn.data+" ");
-    }
+	private boolean find(Node nn, int item) {
+		
+		if (nn == null) {
+			return false;
+		}
 
-    public void InOrder(){
-        InOrder(root);
-        System.out.println();
-    }
-    private void InOrder(Node nn){
-        if( nn == null){
-            return;
-        }
-        InOrder(nn.left);
-        System.out.print(nn.data+" ");
-        InOrder(nn.right);
-    }
+		if (nn.data == item) {
+			return true;
+		}
 
-    private void levelOrder(){
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
-        while(!q.isEmpty()){
-            Node rv = q.remove();
-            
-        }
-    }
+		return find(nn.left, item) || find(nn.right, item);
+
+	}
+
+	public int ht() {
+
+		return ht(this.root);
+	}
+
+	private int ht(Node node) {
+		
+		if(node==null) {
+			return -1;
+		}
+
+		int lh = ht(node.left);
+		int rh = ht(node.right);
+
+		return Math.max(lh, rh) + 1;
+	}
+
 }
